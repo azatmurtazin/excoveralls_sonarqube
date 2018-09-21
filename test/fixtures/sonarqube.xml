@@ -1,0 +1,7 @@
+<coverage version="1">
+  <file path="lib/hello_world.ex">
+    <lineToCover covered="true" lineNumber="20"/>
+    <lineToCover covered="true" lineNumber="24"/>
+    <lineToCover covered="false" lineNumber="28"/>
+  </file>
+</coverage>

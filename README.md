@@ -1,6 +1,6 @@
 # ExcoverallsSonarqube
 
-**TODO: Add description**
+This package helps to convert Excoveralls JSON to the SonarQube XML report.
 
 ## Installation
 
@@ -15,7 +15,8 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/excoveralls_sonarqube](https://hexdocs.pm/excoveralls_sonarqube).
+## Usage
 
+```sh
+mix sonarqube /tmp/excoveralls.json /tmp/sonarqube.xml
+```
