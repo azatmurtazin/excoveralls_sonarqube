@@ -1,13 +1,38 @@
 defmodule Mix.Tasks.Sonarqube do
   @moduledoc """
   Converts Excoveralls JSON to the SonarQube XML.
+
+  ## Usage
+
+      mix sonarqube [--input INPUT_FILE] [--output OUTPUT_FILE]
+
+  By default `INPUT_FILE` is `cover/excoveralls.json`
+  and `OUTPUT_FILE` is `cover/sonarqube.xml`
+
   """
 
   @shortdoc "Convert Excoveralls JSON to the SonarQube XML"
 
   use Mix.Task
 
-  def run([input_file, output_file]) do
+  def run(args) do
+    args
+    |> parse_options()
+    |> do_run()
+  end
+
+  def parse_options(args) do
+    {parsed, _, _} = OptionParser.parse(args, strict: [input: :string, output: :string])
+
+    defaults = %{
+      input: "cover/excoveralls.json",
+      output: "cover/sonarqube.xml"
+    }
+
+    Map.merge(defaults, Enum.into(parsed, %{}))
+  end
+
+  def do_run(%{input: input_file, output: output_file}) do
     IO.puts("Convert '#{input_file}' to '#{output_file}'")
 
     xml =
@@ -20,8 +45,6 @@ defmodule Mix.Tasks.Sonarqube do
     |> create_dir()
     |> File.write!(xml)
   end
-
-  def run(_), do: IO.puts("Provide input_file & output_file")
 
   def create_dir(output_file) do
     output_file

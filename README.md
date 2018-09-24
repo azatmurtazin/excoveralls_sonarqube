@@ -10,7 +10,7 @@ by adding `excoveralls_sonarqube` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:excoveralls_sonarqube, "~> 0.1.0"}
+    {:excoveralls_sonarqube, "~> 0.1"}
   ]
 end
 ```

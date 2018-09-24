@@ -4,10 +4,11 @@ defmodule ExcoverallsSonarqube.MixProject do
   def project do
     [
       app: :excoveralls_sonarqube,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -23,6 +24,14 @@ defmodule ExcoverallsSonarqube.MixProject do
     [
       {:jason, "~> 1.1"},
       {:xml_builder, "~> 2.1"}
+    ]
+  end
+
+  defp package do
+    [
+      description: "This package helps to convert Excoveralls JSON to the SonarQube XML report.",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/azatmurtazin/excoveralls_sonarqube"}
     ]
   end
 end
