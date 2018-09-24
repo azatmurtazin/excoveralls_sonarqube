@@ -23,7 +23,8 @@ defmodule ExcoverallsSonarqube.MixProject do
   defp deps do
     [
       {:jason, "~> 1.1"},
-      {:xml_builder, "~> 2.1"}
+      {:xml_builder, "~> 2.1"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
