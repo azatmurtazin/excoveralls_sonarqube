@@ -26,3 +26,5 @@ mix coveralls.json
 ## and finally convert
 mix sonarqube --input cover/excoveralls.json --output cover/sonarqube.xml
 ```
+
+[![Sponsored by FunBox](https://funbox.ru/badges/sponsored_by_funbox_grayscale.svg)](https://funbox.ru)
