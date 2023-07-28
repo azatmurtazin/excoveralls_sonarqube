@@ -4,8 +4,8 @@ defmodule ExcoverallsSonarqube.MixProject do
   def project do
     [
       app: :excoveralls_sonarqube,
-      version: "0.1.3",
-      elixir: "~> 1.7",
+      version: "0.1.4",
+      elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package()
@@ -22,8 +22,8 @@ defmodule ExcoverallsSonarqube.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jason, "~> 1.1"},
-      {:xml_builder, "~> 2.1"},
+      {:jason, "~> 1.4"},
+      {:xml_builder, "~> 2.2"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
